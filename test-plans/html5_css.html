@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Selector Basic Page</title>
+	<script type="text/javascript" src="/common/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="/common/js/jquery-1.7.2.min.js"></script>
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="ie6style.css" />
+<![endif]-->
+	<script language="JavaScript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+	<script>
+	/*웹 페이지가 모두 준비되면*/
+	//$(document).ready(function(){
+	/*모든 태그의 border 속성에 5px solid black을 적용합니다.
+	$('.telephone').css({padding:'5px',border:'1px solid #ccc',width:'150px'});
+	});
+	$(document).ready(function(){
+		$('.book.inactive').css('display','none');
+	});
+	$(document).ready(function()(
+		$('ul.menu>li').css('border-color','#00aa00');
+		});
+	$(document).ready(function(){
+		$('div.sidebar em').css('text-decoration','underline');
+		});
+	$(document).ready(function(){
+		var el='.book-one,.book-two,.book-three,.book-four,.book-five,' + '#header,#footer p';
+		$(el).css('background','#ccc');
+		});
+	$(document).ready(function(){
+		$('*:header')
+		});
+	$(document).ready(function(){
+		$('tr:even').css('background','#dedede');
+		});
+	$(document).ready(function(){
+		$('ul li:first').css('border','none')
+		$('ul li:last').css('border','none')
+	});
+	$(document).ready(function(){
+		$('p:has(em)').css('font-size','18px');
+	});
+	$(document).ready(function(){
+		$('td:contains("Paoer Towels")').css('border','1px dashed #333');
+	});
+	$(document).ready(function(){
+		$('a[href*="google.com"]').addClass('google-icon');
+	});
+	$(document).ready(function(){
+		$('div[id$="bird"]').addClass('bird')
+	});
+	$(document).ready(){
+		alert("The DOM is ready");
+	});
+	var imgArray = [
+		"screenshot1.jpg",
+		"screenshot2.jpg",
+		"screenshot3.jpg",
+		"screenshot4.jpg",
+		"screenshot5.jpg"
+	];
+	imgArrLength = imgArray.length,
+		i;
+	for (i = 0 ; i < imgArrLength ; i++ ;)
+	{
+		$('<img />')
+		.attr({
+			'src':'images/' + imgArray[i],
+			'id':'img' + i})
+			.load(function){
+				$('.gallery').append($(this));
+				});
+	}
+	$(document).ready(function(){
+		$('.box').bind('click',function(){
+			$(this)
+				.clone()
+				.html('I am clone!')
+				.appendTo('.container')
+				});
+			});
+	
+	$(document).ready(function(){
+		$('.content-link').click(function(){
+			$('#content').toggle();
+		});
+	});
+	
+
+	$(document).ready(function ( ){
+	function increase (){
+	var input = $('#number');
+	input.val(parseInt(input.val(),10), + 1);
+	}
+
+	function decrease (){
+	var input = $('#number');
+	input.val(parseInt(input.val(),10), -1);
+	}
+	$('#plus').click(increase).bind({
+		'mousedown':function (){
+		 plus = window.setInterval(increase,100)
+		 },
+		 'mouseup':function (){
+		 window.clearTimeout(plus)
+		 }
+	});
+	$('#miuns').bind({
+		'mousedown':function(){
+		minus = window.setInterval(decrease,100)
+		},
+		'mouseup':function(){
+		window.clearTimeout(minus)
+		}
+	});
+	});
+	
+	$(document).ready(function(){
+		$('#rollover').hover(
+			function(){
+				$(this).attr('src','/TEST/images/txt_service_faq_on.gif');//mouseenter
+			},
+			function(){
+				$(this).attr('src','/TEST/images/txt_service_faq_off.gif');//mouseleave
+			}
+		);
+	});
+		
+
+	$(document).ready(function(){
+		$('.product-image img').hover(
+			function() {
+			 var caption = $(this).attr("title");			
+			 $(this).after('<p class="caption">' + caption + '</p>');
+			},
+			function() {
+				$('p.caption').remove();			
+				}
+			});
+	});
+
+	$(document).ready(function(){
+		$('#recipe').hide();
+		$('#recipe-name').click(function(){
+			$('#recipe').toggle();
+		});
+	});
+	
+	function bgBlink() {
+		$('#recipe-name').toggleClass('bg');
+		window.setInterval(bgBlink,250);
+		blink = window.setInterval(bgBlink,250);
+		window.setTimeout(
+			'window.clearTimeout(blink)',1000
+		);
+		window.clearTimeout(blink)
+
+	
+	$(document).ready(function(){
+		$('.buttons').hover(
+		function(event){
+			$(this).addClass('hover');
+			var $txt=$(this).text();
+			$('<span class="showtip">THIS is '+$txt+' menu </span>')
+		appendTo($(this));
+			}.
+			function(){
+				$(this).removeClass('hover');
+				$('.showtip').remove();
+			}
+		);
+	});
+	
+$(document).ready(function () {
+	$('.product-image img')
+		.bind('mouseenter', function () { //
+			var caption = $(this).attr("title");
+			$(this).after('<p class="caption">' + caption + '</p>');
+		})
+		.bind('mouseleave', function () { //mouseleave:
+			$('p.caption').remove();
+		});
+});
+
+/* QNA 
+$(document).ready(function () {
+	$('.answer').hide();
+	$('.question').click(function () {
+		$('.answer').toggle();
+	});
+});
+*/
+$(document).ready(function () {
+	$('tr:odd').css('background','#dedede');
+	$('td:eq(2)').css('color','red');
+	$('ul li:first').css('border','none');
+	$('ul li:last').css('border','none');
+	$('p:has(span)').css('font-size','24px');
+	$('.error:empty').css('display','none');
+	$('td:contains("Paper Towels")').css('border','1px dashed #333');
+	$('a[href*="google.com"]').addClass('google-icon');
+	$('div[id$="bird"]').addClass('bird');
+	$('.content').html('<div class="main">Hello JQuery.</div>');
+	//$('.content').text('<div class="main">Hello JQuery.</div>'); 
+	$('.content').prepend('<p>.prepend()</p>').append('<p>.append()</p>');
+	$('.content').before('<p>.before()</p>').after('<p>.after()</p>');
+	$('.content').remove();
+	$('div.sidebar').append(
+		$('p.copy').clone()
+	);
+	$('.container').addClass('active book');
+	$('#page-wrap').removeClass('alternate main pvroduct');
+	$('#page-wrap').toggleClass('alternate');
+	$('ul').find('li:has(img)').addClass('selected');
+	$('p').find('em').first( ).addClass('first_method');
+	$('p').find('em:first').addClass('first_filter');
+	$('#bird').add('#dog').addClass('selected');
+	$('ul.first').find('.one').css('border','3px solid #c00')
+		.end()
+			.find('.two').css('border','3px solid #0c0')
+		.end()
+			.find('.three').css('border','3px solid #00c');
+	$('h2').nextAll('p').andSelf().addClass('on');
+
+	//${'li:first'}.next( ).next( ).andSelf( ).addClass('on');
+	$('li').each(function() {
+		var color = $(this).text()
+		$(this).css('color', color);
+	})
+	 alert("The DOM is ready");
+
+	 var imgArray = [
+		"/car/images/ferrari_california.jpg",
+		"/car/images/ferrari_ff.jpg",
+		"/car/images/hyundai_santafe.jpg",
+		"/car/images/kia_k9.jpg",
+		"/car/images/kia_ray.jpg",
+	 ];
+	 var imgArrLength = imgArray.length,
+		i=0;
+	for (i=0;i<imgArrLength ; i++ )
+	{
+		$('<img/>')
+		.attr({
+			'src':'images/' + imgArray[i],
+			'id':'img' + i
+		})
+		.load(function() {
+			$('.gallery').append($(this));
+		});
+	};
+	//$('.mylink').bind(click, function(){
+	//	alert("hello World");
+	//});
+	//$('.box').bind('click', function() {
+	//	$(this)
+	//		.clone()
+	//		.html('I am clone!')
+	//		.appendTo ('.container');
+	//	});
+	//$('.container').delegate('.box','click',function() {
+	//	$(this).clone().appendTo('container');
+	//$('#outer').bind('mouseover',function (){
+	//	console.log('mouse lies over #outer');
+	$('.content-link').click(function(){
+		$('#content').toggle()};
+	$('.product-images img')
+		.bind('mouseenter', function() {
+		 var caption = $(this).attr("title");
+		 $(this).after('<p class="caption">'+caption+'</p>');
+		})
+		.bind('mouseleave', function() {});
+	});
+	//$('.bold').bind('click',function(){
+	// alert('You have clicked the Bold button');
+	//alert('You have clciked the'+$(this).text()+'button');
+	//});
+	//$('.buttons').mousedown(function(event){
+	//if(event.button==1){
+	//	$('p').text('Left mouse button is pressed');	
+	//}
+	//else
+	//{
+	//	$('p').text('right mouse button is pressed');
+	
+	//}
+	//alert('You have clciked the'+$(this).text()+'button');
+	//alert('You have clicked the Bold button');
+	//});
+	//$('.italic').trigger('click');
+	//$('.bold').click(function(){
+	//$('.buttons')muusedown();
+	//});
+	$('.buttons').mouseover(function(){
+		$('p').css({
+		'background-color':'cyan','font-weight':'bold','color':'blue'
+		});
+		});
+	});
+
+	$('img').css('opacity',0.4);
+
+	$('.buttons').bind('mouseover',function(){
+		$('img').css('opacity',1.0);	
+	});
+	$('.buttons').bind('mouseout',function(){
+		$('img').css('opacity',0.4);
+	});
+	$('img').click(function(){
+	 $(this).animate({left:600},'slow');
+	// $('img').slideup('slow');
+	});
+	$('#nav').click(function(){
+		$('#nav>li>ul').slidedown('slow');
+	
+	});
+	$('div').click(function(event){
+	alert('you hve clciked the div element');
+	});
+	$('p').click(function(event){
+	alert('you have clciked the');
+	});
+	$('span').click(function(event){
+	alert('span');
+	});
+}); 
+	</script>
+	<style type="text/css">
+div
+{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+animation:mymove 5s infinite;
+animation-timing-function:linear;
+
+/* Safari and Chrome */
+-webkit-animation:mymove 5s infinite;
+-webkit-animation-timing-function:linear;
+}
+
+@keyframes mymove
+{
+from {left:0px;}
+to {left:200px;}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+from {left:0px;}
+to {left:200px;}
+}
+	/*h1 태그의 color 속성에 red 키워드를 적용합니다.*/
+	img {position:relative;}
+	.on {outline:2px solid #c64;}
+	ul {width:500px;font-family:arial;}
+	ul>li {border-bottom:1px solid #333;}
+	ul li a {text-decoration:none;}
+	.bird {border:1px solid #ccc;width:200px;margin:5px;}
+	.container {width:800px;padding:5px;background:#fff;}
+	.container a.box{display:block;border:2px solid #eee;margin:2px;}
+	#content {display:none;}
+	.alternate {border:1px solid #c64;}
+	.main {background:#666;}
+	.pvroduct {width:500px;}
+	
+	.active {outline:1px solid #c64;}
+	.book {background:#333;}
+	.product {width:350px;padding:5px;border:3px solid #ccc;}
+	.first_method {border:3px solid #ccc;}
+	.first_filter {border:3px solid #0c0;}
+	.cart {width:800px;margin:0 0 10px;border:2px solid #ccc;}
+	.add-to-cart {padding:3px;border:1px solid #333;background:#333;color:#fff;cursor:pointer;}
+	.success {padding:8px;border:2px solid #c6d880;background:#E6EFC2;color:#264409;}
+	.p.toolTip {background:#efefef;}
+	.clear {clear:both;}
+	div {border:1px solid #000;padding:5px;}
+	div.product-image {position:relative;padding-bottom:2.3em;}
+	p.caption {position:absolute;bottom:0;}
+	.reGooglecipe {display:none;}
+	.bg {background:#ccc;}
+	.buttons {width:150px;margin:5px;float:left;text-align:center;color:#000;background:red;font-weight:bold;}
+	.hover {color:red;background:url(/car/images/ferrari_california.jpg) no-repeat bottom;}
+	.showtip (display:black;margin:25px;)
+	ul#nav {margin:10px 0 10px;padding:0;}
+	ul#nav li {float:left;width:30px;}
+	ul#nav li a {padding:5px;background:#05608A;color:#fff;text-decoration:none;}
+	.google-icon {padding:0 30px;background:url(/car/images/ferrari_california.jpg) no-repeat;}
+	</style>
+	
+
+</head>
+
+<body>
+	<div class="container">
+		<a class="box">HAN YOON SEOK</a>
+
+		<h1>hello JQuery</h1>
+		<div class="cart">
+			<h2>Shopping Cart</h2>			
+		</div>
+		<div class="product">
+			<h3>Apple Iphone 4</h3>
+			<div class="product-image">
+				<img src="/TEST/images/txt_service_use_how_01.gif" title="steve Jobs holds up the newst iPhone 4." alt="steve Jobs holds up the newst iPhone 4." />
+			</div>
+			<p class="info">Iphone 4is a GSM cell phone with a high-resolution display,Face video calling, HD video recording,a5megapixe; 
+			</p>
+			<p class="price">$299.99</p>
+		</div>
+		
+
+
+		<a href="#" class="content-link">Show More</a>
+		<div id="content">
+			<p>아이폰5</p>
+		</div>
+		<div class="gallery"></div>
+		<ul>
+			<li><a href="#">Navigationn</a></li>
+		</ul>
+		<p class="telephone"><img src="/images/product.jpg"></p>
+		<p class="telephone"><img src="/images/product.jpg"></p>
+
+	</div>
+	<div class="book inactive">
+		<p>Travel Guide To NYC</p>
+	</div>
+	<div class="book active">
+		<p>Travel Guide to San Francisco</p>
+	</div>
+	<ul class="menu">
+		<li>menu 1
+			<ul>
+				<li>menu 1-1</li>
+				<li>menu 1-2</li>
+				<li>menu 1-3</li>
+			</ul>
+		</li>
+		<li>menu 2
+			<ul>
+				<li>menu 2-1</li>
+				<li>menu 2-2</li>
+				<li>menu 2-3</li>
+			</ul>
+		</li>
+		<li>menu 3
+			<ul>
+				<li>menu 3-1</li>
+				<li>menu 3-2</li>
+				<li>menu 3-3</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="sidebar">
+		<p>I <span>emphasize</span> this.</p>
+		<p>I <em>emphasize</em>this,too</p>
+	</div>
+	<p class="copy">but<em>not</em>this.</p>
+	<h1 id="header">Book Club</h1>
+	<p class="book-one">Travel Guide To NY</p>
+	<p class="book-two">Travel Guide To NY</p>
+	<p class="book-three">Travel Guide To NY</p>
+	<p class="book-four">Travel Guide To NY</p>
+	<p class="book-five">Travel Guide To NY</p>
+	<div id="footer"><p>Copyright 2010</p></div>
+	<table>
+		<tr>
+			<th>pRO</th>
+			<th>Des</th>
+			<th>Price</th>
+		</tr>
+		<tr>
+			<td>Paper Towels</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Paper Towels</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>Paper Towels</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>Paper Towels</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>Paper Towels</td>
+		</tr>
+	</table>
+	<div id="red-bird">red-bird</div>
+	<div id="bird-red">bird-red</div>
+	<div id="bird-black">bird-black</div>
+	<div id="black-bird">black-bird</div>
+	<form>
+		<label for="number">pleses input a number</label>
+		<input type="button" id="minus" value="-" />
+		<input type="text" id="number" value="0" />
+		<input type="button" id="plus" value="+" />
+	</form>
+	<input type="image" id="rollover" src="/TEST/images/txt_service_faq_off.gif" alt="" />
+	<h5 id="recipe-name" class="recipe-name">Key Lime Pie</h5>
+	<div id="recipe">
+	Key line pie is an American dessert 
+	
+	</div>
+	<span class="bold buttons">Bold</span>
+	<span class="italic buttons">Italic</span>
+
+	<h1>Helio jQuery</h1>
+	<div class="cart">
+		<h2>Shooping Cart</h2>
+	</div>
+	<div class="product-image">
+		<img src="../images/common/tooltip_area_top.png" alt="이미지" title="1231213" />
+	
+	</div>
+	<p class="info">iphone 4 is a GSM cell</p>
+	<p class="price">$299.99</p>
+
+	<div id="slide_image">
+		<img src="/car/images/ferrari_california.jpg" alt="123" />
+		
+	</div>
+
+	
+	<ul id="nav">
+		<li><a rel="1" class="active" href="#123.html">1</a></li>
+		<li>
+			<a rel="2" href="1.html">2</a>
+			<ul>
+				<li><a rel="2" href="1.html">2</a></li>
+				<li><a rel="2" href="1.html">2</a></li>
+				<li><a rel="2" href="1.html">2</a></li>
+				<li><a rel="2" href="1.html">2</a></li>
+				<li><a rel="2" href="1.html">2</a></li>
+			</ul>
+		</li>
+		<li><a rel="3" href="1.html">3</a></li>
+		<li><a rel="4" href="1.html">4</a></li>
+		<li><a rel="5" href="1.html">5</a></li>
+	</ul>
+	
+	<div class="error"></div>
+	<div class="error">I Am a boy</div>
+
+	<ul id="altText">
+		<li><a href="http://www.google.com/analytics">Google</a></li>
+		<li><a href="http://www.yahoo.com/sports">Yahoo Sports</a></li>
+		<li>Thounds Of sheeep are heading east.</li>
+		<li>Thounds Of sheeep are heading east.</li>
+		<li>Thounds Of sheeep are heading east.</li>
+	</ul>
+
+	<div id="page-wrap">
+		<p class="alternate">서초구 방배동 서초대로 30 서초빌딩 3층</p>
+		<p class="main">서초구 방배동 서초대로 30 서초빌딩 3층</p>
+		<p class="pvroduct">서초구 방배동 서초대로 30 서초빌딩 3층</p>
+	</div>
+
+	<p id="bird">select me</p>
+	<p id="dog">select me. too</p>
+
+	<ul class="first">
+		<li class="one">menu 1</li>
+		<li class="two">menu 2</li>
+		<li class="three">menu 3</li>
+	</ul>
+
+	<ul class="second">
+		<li class="one">menu 1</li>
+		<li class="two">menu 2</li>
+		<li class="three">menu 3</li>
+	</ul>
+
+	<h2>hello JQuery</h2>
+	<h3>hello selector</h3>
+	<p>문단1</p>
+	<div><p>문단2</p></div>
+	<p>문단3</p>
+
+	<ul>
+		<li>silver</li>
+		<li>gray</li>
+		<li>aqua</li>
+		<li>skyblue</li>
+		<li>coral</li>
+		<li>maroon</li>
+	</ul>
+
+	<div class="gallery"></div>
+
+	<div id="outer">outer
+		<div id="inner">inner</div>
+	</div>
+	<div class="product-images">
+		<img src="/car/images/ferrari_california.jpg" alt="123" title="5599" />
+	</div>
+	<span class="bold buttons">Bold</span>
+	<img src="/car/images/ferrari_california.jpg" alt="123" title="5599" />
+	<ul id="nav">
+		<li><a href="#">sfsdf</a></li>
+		<li>
+			<a href="#"></a>
+			<ul>
+				<li><a href="#">1234</a></li>
+				<li><a href="#">1245</a></li>
+				<li><a href="#">3456</a></li>
+				<li><a href="#">5678</a></li>
+				<li><a href="#">123</a></li>
+			</ul>
+		</li>
+		<li><a href="#">sdf</a></li>
+		<li><a href="#">sdf</a></li>
+		<li><a href="#">sdf</a></li>
+		<li><a href="#">sdf</a></li>
+		<li><a href="#">sf</a></li>
+	</ul>
+
+	<div>
+	버블링 막기
+	<p>무단<br/><span>스판</span></p>
+	</div>
+
+
+
+
+
+</body><!-- 버튼 -->
+</html>
