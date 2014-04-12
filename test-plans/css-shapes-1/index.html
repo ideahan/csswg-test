@@ -56,11 +56,11 @@
       <section>
         <h3>Enabling easy test contribution</h3>
         <p>
-          An important vector in successfully testing CSS Shapes is to
+          An important vector in creating successfully testing CSS Shapes is to
           enable easy test contributions, both from W3C partners and from
           non-W3C members that wish to contribute. This is achieved by clearly
-          marking and explaining the areas that need testing, linking to existing
-          tests, and general testing progress. 
+          marking and explaining the areas that need testing, linked to existing
+          tests and general testing progress. 
         </p>
       </section>
       <section>
@@ -76,7 +76,7 @@
       <section>
         <h3>Creating automation-friendly tests</h3>
         <p>
-          In terms of actual tests produced for the CSS Shapes specification, the main goal
+          In terms of actual tests produced for the CSS Shapes, the main goal
           is to ensure that most tests are automatable (i.e. they're either
           reftests or use <code>testharness.js</code>). Even where manual tests
           are absolutely necessary they should be written so that they can be
@@ -112,6 +112,7 @@
           list</a>.
         </p>
         <p>
+<<<<<<< HEAD
         <section>
         <h4>Proper parsing of the CSS properties and values according to the spec</h4>
             <p class=note>
@@ -141,23 +142,78 @@
                                         <li>commas / no commas</li>
                                         <li>invalid arg values</li>
                                         <li><code>round</code> keyword
+=======
+          Below is the list of explicit testing areas:
+          <ol>
+            <li>
+                Proper parsing of the CSS properties and values according to the spec:
+                <ul>
+                    <li>
+                        <code>shape-outside</code>
+                        <ul>
+                            <li>auto</li>
+                            <li>
+                                <code>&lt;basic-shape&gt;</code>
+                                <ul>
+                                    <li>
+                                        <code>inset()</code>
+                                        <ul>
+                                            <li>0-4 arguments</li>
+                                            <li>length units: <code>px,pt,em,ex</code></li>
+                                            <li>percentages</li>
+                                            <li>positive/negative lengths</li>
+                                            <li>no unit or %</li>
+                                            <li>commas / no commas</li>
+                                            <li><code>round</code> keyword
+                                                <ul>
+                                                    <li><code>&lt;border-radius&gt;</code>
+                                                        <ul>
+                                                            <li>0-4 arguments</li>
+                                                            <li>length units: <code>px,pt,em,ex</code></li>
+                                                            <li>percentages</li>
+                                                            <li>positive/negative lengths</li>
+                                                            <li>no unit or %</li>
+                                                            <li>commas / no commas</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><code>circle()</code>
+                                        <ul>
+                                        <li><code>&lt;shape-radius&gt;</code>
                                             <ul>
-                                                <li><code>&lt;border-radius&gt;</code>
+                                                <li>0-2 args</li>
+                                                <li>length units: <code>px,pt,em,ex</code></li>
+                                                <li>percentages</li>
+                                                <li>positive/negative lengths</li>
+                                                <li>no unit or %</li>
+                                                <li>commas / no commas</li>
+                                                <li><code>closest-side, farthest-side</code> keywords</li>
+                                            </ul>
+                                        </li>
+                                        <li><code>at</code> keyword
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
+                                            <ul>
+                                                <li><code>&lt;position&gt;</code>
                                                     <ul>
-                                                        <li>0-8 arguments</li>
-                                                        <li>position of '/'</li>
-                                                        <li>length units</li>
+                                                        <li>0-4 arguments</li>
+                                                        <li>length units: <code>px,pt,em,ex</code></li>
                                                         <li>percentages</li>
                                                         <li>positive/negative lengths</li>
-                                                        <li>decimal/non-decimal lengths</li>
-                                                        <li>calc() lengths</li>
                                                         <li>no unit or %</li>
                                                         <li>commas / no commas</li>
+<<<<<<< HEAD
                                                         <li>invalid values</li>
+=======
+                                                        <li><code>top, left, bottom, right</code> keywords</li>
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
+<<<<<<< HEAD
                                     </ul>
                                 </li>
                                 <li><code>circle()</code>
@@ -174,10 +230,13 @@
                                             <li>commas / no commas</li>
                                             <li>invalid arg values</li>
                                             <li><code>closest-side, farthest-side</code> keywords</li>
+=======
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
                                         </ul>
                                     </li>
-                                    <li><code>at</code> keyword
+                                    <li><code>ellipse()</code>
                                         <ul>
+<<<<<<< HEAD
                                             <li><code>&lt;position&gt;</code>
                                                 <ul>
                                                     <li>0-4 arguments</li>
@@ -192,24 +251,97 @@
                                                     <li><code>top, left, bottom, right</code> keywords</li>
                                                 </ul>
                                             </li>
+=======
+                                        <li><code>&lt;shape-radius&gt;</code>
+                                            <ul>
+                                                <li>0-3 args</li>
+                                                <li><i>Plus all of the same shape-radius tests listed above for circle()</i></li>
+                                            </ul>
+                                        </li>
+                                        <li><i>Plus all of the <code>at &lt;position&gt;</code> tests listed above for circle()</i></li>
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
                                         </ul>
                                     </li>
-                                    </ul>
-                                </li>
-                                <li><code>ellipse()</code>
-                                    <ul>
-                                    <li><code>&lt;shape-radius&gt;</code>
+                                    <li><code>polygon()</code>
+                                        <li><code>&lt;shape-arg&gt;</code>'s
                                         <ul>
-                                            <li>0-2 args (valid), 3 args (invalid)</li>
-                                            <li><i>Plus all of the same shape-radius tests listed above for circle()</i></li>
+                                            <li>0-6 vertices (argument pairs)</li>
+                                            li>length units: <code>px,pt,em,ex</code></li>
+                                            <li>percentages</li>
+                                            <li>positive/negative lengths</li>
+                                            <li>no unit or %</li>
+                                            <li>commas / no commas</li>
                                         </ul>
+                                        <li><code>&lt;fill-rule&gt;</code>
+                                            <ul>
+                                                <li><code>nonzero</code></li>
+                                                <li><code>evenodd</code></li>
+                                            </ul>
+                                        </li>
                                     </li>
-                                    <li><i>Plus all of the <code>at &lt;position&gt;</code> tests listed above for circle()</i></li>
-                                    </ul>
-                                </li>
-                                <li><code>polygon()</code>
-                                    <li><code>&lt;shape-arg&gt;</code>'s
+                                </ul>
+                            </li>
+                            <li><code>&lt;box&gt;</code>
+                                <ul>
+                                    <li><code>margin-box</code></li>
+                                    <li><code>border-box</code></li>
+                                    <li><code>padding-box</code></li>
+                                    <li><code>content-box</code></li>
+                                </ul>
+                            </li>
+                            <li><code>&lt;image&gt;</code></li>
+                        </ul>
+                    </li>
+                    <li><code>shape-margin</code>
+                        <ul>
+                            <li>length units: <code>px,pt,em,ex</code></li>
+                            <li>percentages</li>
+                            <li>positive/negative lengths</li>
+                            <li>no unit or %</li>
+                        </ul>
+                    </li>
+                    <li><code>shape-image-threshold</code>
+                        <ul>
+                            <li>decimal - 0-5 places</li>
+                            <li>no decimal</li>
+                            <li>percentage (invalid)</li>
+                            <li>positive/negative values</li>
+                            <li>+ / - signs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Proper rendering &amp; layout of text around shapes according to the spec:</li>
+                <ul>
+                    <li>Basic Shapes
+                        <ul>
+                            <li>inset
+                                <ul>
+                                    <li>square corners</li>
+                                    <li>rounded corners</li>
+                                </ul>
+                            </li>
+                            <li>circle, ellipse
+                                <ul>
+                                    <li>explicit/implicit radii</li>
+                                    <li>explicit/implicit position</li>
+                                    <li>closest-side / farthest-side</li>
+                                </ul>
+                            </li>
+                            <li>polygon
+                                <ul>
+                                    <li>relative/absolute units</li>
+                                    <li>fill-rule: evenodd/nonzero</li>
+                                </ul>
+                            </li>
+                            <li>float left / right</li>
+                            <li>shape-margin</li>
+                            <li>shape-box</code>
+                                <ul>
+                                <li>unspecified</li>
+                                <li>specified:
                                     <ul>
+<<<<<<< HEAD
                                         <li>1-6 vertices (valid), 0 vertices (invalid)</li>
                                         <li>length units</li>
                                         <li>percentages</li>
@@ -332,11 +464,17 @@
                                     <li>border-box</li>
                                     <li>padding-box</li>
                                     <li>content-box</li>
+=======
+                                        <li>margin-box</li>
+                                        <li>border-box</li>
+                                        <li>padding-box</li>
+                                        <li>content-box</li>
+                                    </ul>
+                                </li>
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
                                 </ul>
                             </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        </ul>
                     </li>
                     <li>Shapes from Box Values
                         <ul>
@@ -372,6 +510,7 @@
                             <li>shape-image-threshold</li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                     <li>Float Tests
                         <ul>
                             <li>Float stacking</li>
@@ -380,9 +519,13 @@
                             <li>Shapes that extend past the margin box edge</li>
                         </ul>
                     </li>
+=======
+                    
+>>>>>>> parent of f0dadce... new draft of CSS Shapes test plan (with Bear's feedback)
                 </ul>
             </li>
-            </section>
+          </ol>
+        </p>
       </section>
       <section>
         <h3>Implicit testing areas</h3>
